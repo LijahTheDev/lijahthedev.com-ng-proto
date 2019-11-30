@@ -1,0 +1,32 @@
+<header class="header" role="banner">
+  <div class="site-title">
+    <a routerLink="/" routerLinkActive="home-link"><h1>LijahTheDev</h1></a>
+  </div>
+
+  <div
+    class="bg"
+    *ngIf="!bgVideo"
+    (mousemove)="moveBg($event)"
+    [ngStyle]="{
+      backgroundPosition: position,
+      'background-image': 'url(' + image + ')'
+    }"
+  ></div>
+
+  <div class="wrapper" *ngIf="bgVideo">
+    <div class="gradient"></div>
+    <video
+      loop
+      muted
+      autoplay
+      oncanplay="this.play()"
+      onloadedmetadata="this.muted = true"
+      class="bgVideo"
+      [poster]="image"
+    >
+      <source [src]="video" type="video/mp4" />
+    </video>
+  </div>
+
+  <app-nav [vertical]="verticalNav"></app-nav>
+</header>

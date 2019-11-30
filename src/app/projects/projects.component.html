@@ -1,0 +1,20 @@
+<app-header
+  _video="smokey-mountains"
+  [bgVideo]="true"
+  [verticalNav]="false"
+></app-header>
+
+<div *ngIf="projects?.length > 0; else noProjects">
+  <ul *ngFor="let project of projects">
+    <li>{{ project.id }}</li>
+    <li>{{ project.title }}</li>
+    <li>{{ project.description }}</li>
+    <li>{{ project.lang.name }}</li>
+    <li>{{ project.year }}</li>
+  </ul>
+</div>
+
+<ng-template #noProjects>
+  <hr />
+  <h5>There are no projects!</h5>
+</ng-template>
