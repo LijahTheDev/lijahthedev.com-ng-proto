@@ -2,11 +2,32 @@
 
 /* You can add global styles to this file, and also import other style files */
 
-html,
 body {
-  height: 100%;
-}
-body {
-  margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin: 0;
+  background: #000;
+  scroll-behavior: smooth;
+}
+
+a,
+a:visited,
+a:link,
+a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+  transition: all 1s;
+}
+::-webkit-scrollbar-track {
+  background: #000;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#fff, #2e2e2e);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(#0059ff, #000000);
 }

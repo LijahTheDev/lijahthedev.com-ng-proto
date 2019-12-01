@@ -1,0 +1,15 @@
+.bio-card {
+  margin: 50px auto;
+  max-width: 500px;
+}
+
+.profile-image {
+  background-image: url("/assets/images/profile-img2.jpg");
+  background-position: center;
+  background-size: contain;
+}
+
+.bold::first-letter {
+  text-transform: uppercase;
+  font-weight: 900;
+}

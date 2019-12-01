@@ -1,20 +1,55 @@
-<app-header
-  _video="smokey-mountains"
-  [bgVideo]="true"
-  [verticalNav]="false"
-></app-header>
+<app-header _video="aurora" [bgVideo]="true" [verticalNav]="false"></app-header>
+<ng-container *ngIf="projects?.length > 0; else noProjects">
+  <mat-card *ngFor="let project of projects" class="project-card">
+    <a [href]="project.links.site" target="_blank">
+      <img
+        mat-card-image
+        [src]="project.image"
+        alt="Project Image"
+        class="project-img"
+      />
+    </a>
 
-<div *ngIf="projects?.length > 0; else noProjects">
-  <ul *ngFor="let project of projects">
-    <li>{{ project.id }}</li>
-    <li>{{ project.title }}</li>
-    <li>{{ project.description }}</li>
-    <li>{{ project.lang.name }}</li>
-    <li>{{ project.year }}</li>
-  </ul>
-</div>
+    <mat-card-title>{{ project.title }}</mat-card-title>
+    <mat-card-content>{{ project.description }} </mat-card-content>
+
+    <mat-chip-list>
+      <mat-chip class="chip-color">{{ project.lang.name }}</mat-chip>
+      <mat-chip>{{ project.year }}</mat-chip>
+    </mat-chip-list>
+
+    <mat-card-actions class="btn-wrapper">
+      <a [href]="project.links.site" target="_blank" title="Live Site">
+        <button mat-fab class="fab-hover">
+          <mat-icon>open_in_new</mat-icon>
+        </button>
+      </a>
+
+      <a [href]="project.links.github" target="_blank" title="Github">
+        <button mat-fab class="fab-hover">
+          <mat-icon>code</mat-icon>
+        </button>
+      </a>
+    </mat-card-actions>
+  </mat-card>
+</ng-container>
 
 <ng-template #noProjects>
-  <hr />
-  <h5>There are no projects!</h5>
+  <mat-card class="project-card">
+    <mat-card-title>No Projects Found 😱</mat-card-title>
+    <mat-card-content
+      >Please Try Again. If the problem persist, contact the owner of this
+      site.</mat-card-content
+    >
+
+    <mat-card-actions class="btn-wrapper">
+      <a href="/work" title="Reload">
+        <button mat-fab class="fab-hover">
+          <mat-icon>refresh</mat-icon>
+        </button>
+      </a>
+    </mat-card-actions>
+  </mat-card>
 </ng-template>
+
+<app-footer></app-footer>

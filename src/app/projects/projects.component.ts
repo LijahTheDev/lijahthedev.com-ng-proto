@@ -14,7 +14,7 @@ export class ProjectsComponent implements OnInit {
 
   ngOnInit() {
     this.projectService.getProjects().subscribe(projects => {
-      this.projects = projects;
+      this.projects = projects.sort((a, b) => a.order - b.order);
     });
   }
 }

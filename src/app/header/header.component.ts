@@ -30,16 +30,18 @@ export class HeaderComponent implements OnInit {
   }
 
   videoByDeviceSize() {
+    if (!this.bgVideo) {
+      this.bgVideo = false;
+      if (!this.image) this.image = "/assets/images/black-design2.jpg";
+    }
     let headerElement = this._elementRef.nativeElement.querySelector("header");
     this.screenWidth = headerElement.clientWidth;
 
-    const sizedVideo =
-      this.screenWidth <= 420
-        ? `/assets/videos/${this._video}-small.mp4`
-        : `/assets/videos/${this._video}.mp4`;
-
-    console.log(sizedVideo);
-
-    this.video = sizedVideo;
+    if (this.screenWidth <= 420) {
+      this.video = `/assets/videos/${this._video}-small.mp4`;
+      this.verticalNav = true;
+    } else {
+      this.video = `/assets/videos/${this._video}.mp4`;
+    }
   }
 }

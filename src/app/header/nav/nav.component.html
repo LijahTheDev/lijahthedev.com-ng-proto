@@ -1,10 +1,9 @@
-<nav class="vertical-nav">
+<nav [ngClass]="vertical ? 'vertical-nav' : 'horizontal-nav'">
   <a
-    [routerLink]="['/work']"
+    *ngFor="let link of navLinks"
+    [routerLink]="[link.route]"
     routerLinkActive="active-route"
     [routerLinkActiveOptions]="{ exact: true }"
-    >Work</a
+    >{{ link.title }}</a
   >
-  <a [routerLink]="['/about']">About</a>
-  <a [routerLink]="['/contact']">Contact</a>
 </nav>

@@ -20,8 +20,6 @@ export class ProjectService {
       .collection("projects")
       .snapshotChanges()
       .pipe(map(actions => actions.map(this.documentsWithId)));
-
-    console.log(this.projects);
   }
 
   documentsWithId = _ => {

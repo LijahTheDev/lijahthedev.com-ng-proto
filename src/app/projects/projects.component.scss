@@ -1,1 +1,25 @@
+.project-card {
+  max-width: 900px;
+  margin: 20px auto;
+}
 
+.project-img {
+  transition: all 1s ease;
+}
+
+.btn-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.fab-hover {
+  background-color: #fff;
+  color: #000;
+  transition: all 0.3s ease-in-out;
+}
+.fab-hover:hover {
+  background-color: #d50000;
+  color: #fff;
+}

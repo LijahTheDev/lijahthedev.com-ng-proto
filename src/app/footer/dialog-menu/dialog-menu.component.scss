@@ -1,0 +1,63 @@
+.nav-btns {
+  display: flex;
+  flex-direction: column;
+
+  padding: 5px;
+}
+
+.close-dialog-action {
+  display: flex;
+  justify-content: center;
+}
+
+.link-btns {
+  background: #fff;
+  font-weight: 100;
+  border: none;
+  padding: 10px;
+
+  svg {
+    height: 55px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  rect {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 2;
+    stroke-dasharray: 522, 0;
+    transition: all 0.35s linear;
+  }
+}
+
+.link-btns:hover {
+  background: #fff;
+  font-weight: 900;
+  letter-spacing: 1px;
+
+  rect {
+    stroke: #000;
+    stroke-width: 5;
+    stroke-dasharray: 15, 310;
+    stroke-dashoffset: 42;
+    transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+}
+
+.close-btn {
+  background-color: #fff;
+  color: #000;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: rgb(180, 0, 0);
+    color: #fff;
+  }
+}
+
+.active-route {
+  font-weight: 900;
+}

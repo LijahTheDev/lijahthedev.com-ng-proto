@@ -7,7 +7,6 @@ nav {
 
   .active-route {
     background: rgba(0, 0, 0, 0.5);
-    min-width: 40%;
   }
 
   & a {
@@ -29,9 +28,13 @@ nav {
   }
 }
 
-.vertical-nav {
+@mixin vertical-nav {
   width: 60%;
   flex-direction: column;
+
+  .active-route {
+    min-width: 40%;
+  }
 
   & a {
     width: 0;
@@ -48,7 +51,12 @@ nav {
   }
 }
 
+.vertical-nav {
+  @include vertical-nav();
+}
+
 .horizontal-nav {
+  width: 100%;
   justify-content: flex-start;
   align-items: flex-start;
   transition: all 2s;
@@ -56,6 +64,11 @@ nav {
   & a {
     width: 100%;
     text-align: center;
+  }
+
+  // Smaller Screens
+  @media (max-width: 768px) {
+    @include vertical-nav();
   }
 }
 

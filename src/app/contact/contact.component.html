@@ -1,5 +1,10 @@
-<app-header
-  _video="aurora-timelapse"
-  [bgVideo]="true"
-  [verticalNav]="false"
-></app-header>
+<app-header _video="ice" [bgVideo]="true" [verticalNav]="false"></app-header>
+
+<div class="connect-box">
+  <a *ngFor="let box of socialBoxes" [href]="box.link" target="_blank">
+    <h1 class="box-title">{{ box.title }}</h1>
+    <button mat-raised-button class="connect-btn" [color]="box.color">
+      <img [src]="box.icon" class="icons" />
+    </button>
+  </a>
+</div>

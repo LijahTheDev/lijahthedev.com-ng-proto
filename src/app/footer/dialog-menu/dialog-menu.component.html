@@ -1,0 +1,21 @@
+<h2 mat-dialog-title>LijahTheDev.com</h2>
+
+<mat-dialog-content class="nav-btns">
+  <a
+    mat-raised-button
+    class="link-btns"
+    *ngFor="let link of navLinks"
+    [routerLink]="link.route"
+    routerLinkActive="active-route"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+    <svg>
+      <rect x="0" y="0" fill="none" width="100%" height="100%" />
+    </svg>
+    {{ link.title }}</a
+  >
+</mat-dialog-content>
+
+<mat-dialog-actions class="close-dialog-action">
+  <button mat-raised-button class="close-btn" (click)="close()">Close</button>
+</mat-dialog-actions>

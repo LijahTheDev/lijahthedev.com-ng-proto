@@ -6,9 +6,22 @@ import { Component, OnInit, Input } from "@angular/core";
   styleUrls: ["./nav.component.scss"]
 })
 export class NavComponent implements OnInit {
+  navLinks: NavLinks[] = [
+    { title: "Work", route: "/work" },
+    { title: "About", route: "/about" },
+    { title: "Contact", route: "/contact" }
+  ];
+
   @Input() vertical: boolean;
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.vertical);
+  }
+}
+
+interface NavLinks {
+  title: string;
+  route: string;
 }
