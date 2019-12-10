@@ -16,9 +16,7 @@ export class NavComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {
-    console.log(this.vertical);
-  }
+  ngOnInit() {}
 }
 
 interface NavLinks {

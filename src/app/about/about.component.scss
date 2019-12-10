@@ -9,7 +9,13 @@
   background-size: contain;
 }
 
-.bold::first-letter {
+.bold-greeting {
   text-transform: uppercase;
   font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.text-format {
+  font-family: "Roboto", Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 1.3px;
 }
